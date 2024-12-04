@@ -32,7 +32,7 @@ public class Ex1Main {
                 System.out.println(num1 + " + " + num2 + " = "+int2Number(z,f));
                 System.out.println(num1 + " * " + num2 + " = " +int2Number(e,f));
                 System.out.println("Max number over [" + num1 + "," + num2 + ","+int2Number(z,f)+","+int2Number(e,f)+"] is: "+int2Number(e,f));
-                /////////////////////
+                //////////////////////
             }
         }
         System.out.println("quiting now...");
