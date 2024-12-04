@@ -55,6 +55,8 @@ public class Ex1Test {
     @Test
     void maxIndexTest() {
         // implement this test
+        String[] arr = {"123bA","154bA","122bF","12b3"};
+        assertEquals(2, Ex1.maxIndex(arr));
     }
 
     // Add additional test functions - test as much as you can.

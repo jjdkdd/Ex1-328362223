@@ -2,6 +2,8 @@ package ex1;
 
 import java.util.Scanner;
 
+import static ex1.Ex1.int2Number;
+
 /**
  * Intro2CS, Ex1 - very basic "main template"
  * Make sure your implementation of this main performs as the Ex1Sol.jar solution implement all needed functions.
@@ -22,13 +24,14 @@ public class Ex1Main {
                 num2 = sc.next();
                 System.out.println("num2= " + num2 + " is number: true , value: " + num2);
                 System.out.println("Enter a base for output: (a number [2,16]");
-                String num3;
+               String num3;
                 num3 = sc.next();
-                int z = Ex1.number2Int(num1);
-                int e = Ex1.number2Int(num2);
-                System.out.println(num1 + " + " + num2 + " = " + (z + e));
-                System.out.println(num1 + " * " + num2 + " = " + (z * e));
-                System.out.println("Max number over [" + num1 + "," + num2 + "");
+                int z = (Integer.parseInt(num1)+Integer.parseInt(num2));
+                int e = (Integer.parseInt(num1)*Integer.parseInt(num2));
+                int f = Integer.parseInt(num3);
+                System.out.println(num1 + " + " + num2 + " = "+int2Number(z,f));
+                System.out.println(num1 + " * " + num2 + " = " +int2Number(e,f));
+                System.out.println("Max number over [" + num1 + "," + num2 + ","+int2Number(z,f)+","+int2Number(e,f)+"] is: "+int2Number(e,f));
                 /////////////////////
             }
         }

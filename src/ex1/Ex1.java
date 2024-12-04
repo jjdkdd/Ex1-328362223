@@ -14,28 +14,53 @@ package ex1;
 public class Ex1 {
     /**
      * Convert the given number (num) to a decimal representation (as int).
-     * It the given number is not in a valid format returns -1.
+     * If the given number is not in a valid format returns -1.
      *
      * @param num a String representing a number in basis [2,16]
      * @return
      */
 
-    //101b2 => 5
+
     public static int number2Int(String num) {
 
         // add your code here
-        String[] arr  = new String[num.length()];
-        int result = 0;
-        for (int i = 0; i <= num.length() - 2; i++) {
-
-            if (Integer.parseInt(num) % 10 >= 1) {
-                arr[i] = num;
-
-                result = result+i;
-            }
+        String digits = "0123456789ABCDEFG";
+        String num1 = num.split("b")[0];
+        int base;
+        if (num.split("b").length == 2) {
+          base =  digits.indexOf(num.split("b")[1]);
+        } else {
+            base = 10;
         }
-        return result;
+        int ans = 0;
+        for (int i = 0; i < num1.length(); i++) {
+            int n = digits.indexOf(num1.charAt(i));
+            ans += n*Math.pow(base, num1.length() - 1 - i);
+        }
+
+        return ans;
+
+
     }
+
+
+
+            private static int getDigitValue(char digitChar) {
+                if (digitChar >= '0' && digitChar <= '9') {
+                    return digitChar - '0';
+                } else if (digitChar >= 'A' && digitChar <= 'G') {
+                    return digitChar - 'A' + 10;
+                } else {
+                    return -1;
+                }
+            }
+
+            public static void main(String[] args) {
+
+            }
+
+
+
 
 
     ////////////////////
@@ -138,7 +163,6 @@ public class Ex1 {
      *
      */
     public static int maxIndex(String[] arr) {
-        int ans = 0;
         // add your code here
         int currentMaxIndex = 0;
         for (int i=0; i<arr.length; i++) {
@@ -148,7 +172,7 @@ public class Ex1 {
         }
 
         ////////////////////
-        return ans;
+        return currentMaxIndex;
     }
 
 }
